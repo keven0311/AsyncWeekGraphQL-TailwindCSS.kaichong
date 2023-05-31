@@ -20,3 +20,15 @@ code {
   color:rgb(242, 76, 173);
   font-weight: 500;
 }
+
+.character{
+  display: flex; 
+}
+
+.character-content{
+  margin-left: 2rem;
+}
+
+.character-episode{
+  margin-top: 2rem;
+}

@@ -4,14 +4,25 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
+import {ApolloClient, ApolloProvider,InMemoryCache} from "@apollo/client" 
+
+const client = new ApolloClient({
+  uri: "https://rickandmortyapi.com/graphql",
+  cache: new InMemoryCache()
+})
+
+
+//https://rickandmortyapi.com/graphql
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+      <Router>
+          <ApolloProvider client={client}>
+              <App />
+          </ApolloProvider>
+      </Router>
   </React.StrictMode>
 );
 
